@@ -19,12 +19,39 @@ var bio = {
   ]
 };
 
-var work = { 
-  "position" : "Private English Teacher",
-  "employer" : "Private Lessons",
-  "yearsWorked" : 5,
-  "city" : "Rio de Janeiro"
+var work = {
+  "jobs" : [{
+    "employer": "Wise Up Rio Sul",
+    "title": "English Instructor",
+    "location": "Rio de Janeiro, RJ",
+    "dates": 2009,
+    "description": "Taught english to advanced and proficiency classes."
+  },{
+    "employer": "CNA Riviera",
+    "title": "English Instructor",
+    "location": "Rio de Janeiro, RJ",
+    "dates": 2011,
+    "description": "Taught english to intermediate and advanced classes."
+  },{
+    "employer": "Private Lessons",
+    "title": "Private English Teacher",
+    "location": "Rio de Janeiro",
+    "dates": 2012,
+    "description": "As a private tutor, I taught english to children and adults, giving the former a solid foundation of the " + 
+    "language and preparing the latter for their travels and special events." 
+  }]
 };
+
+var projects = {
+  "projects": [{
+    "title": "",
+    "dates": "",
+    "description": "",
+    "images": [
+
+    ]
+  }]
+} 
 
 var education = {
   "schools" : [
@@ -32,37 +59,53 @@ var education = {
       "name" : "Instituto INFNET",
       "program" : "Masters in Software Engineering (.NET)",
       "degree" : "Masters",
-      "years": 2,
-      "city": "Rio de Janeiro, RJ"
+      "dates": 2,
+      "location": "Rio de Janeiro, RJ",
+      "url": ""
     },
     {
       "name" : "Universidade Estácio de Sá",
       "program" : "Bachelor's in International Relations",
       "degree" : "BA",
-      "years" : 4,
-      "city" : "Rio de Janeiro, RJ"
+      "dates" : 4,
+      "location" : "Rio de Janeiro, RJ",
+      "url": ""
     },
     {
       "name" : "Instituto CAELUM",
       "program" : "Programa de aplicações Web .NET",
       "degree" : "",
-      "years" : "0.5",
-      "city" : "Rio de Janeiro, RJ"
+      "dates" : "0.5",
+      "location" : "Rio de Janeiro, RJ",
+      "url": ""
     }
   ],
   "onlineCourses" : [
     {
-      "name" : "Udacity",
-      "program" : "Front End Developer Nanodegree",
-      "date" : 2016,
+      "school" : "Udacity",
+      "title" : "Front End Developer Nanodegree",
+      "dates" : 2016,
       "url" : "www.udacity.com"
     }
   ]
 };
 
+if (bio.skills.length > 0){
+  $("#header").append(HTMLskillsStart);
+  var formattedSkills1 = HTMLskills.replace("%data%", bio.skills[0]);
+  var formattedSkills2 = HTMLskills.replace("%data%", bio.skills[1]);
+  var formattedSkills3 = HTMLskills.replace("%data%", bio.skills[2]);
+  var formattedSkills4 = HTMLskills.replace("%data%", bio.skills[3]);
 
-// var formattedName = HTMLheaderName.replace("%data%", bio.name);
-// var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+  $("#skills").append(formattedSkills1);
+  $("#skills").append(formattedSkills2);
+  $("#skills").append(formattedSkills3);
+  $("#skills").append(formattedSkills4);
+}
+
+
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 
 // var formattedPic = HTMLbioPic.replace("%data%", bio.pictureUrl);
 // var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
@@ -79,8 +122,8 @@ var education = {
 // var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 // var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
-// $("#header").append(formattedRole);
-// $("#header").prepend(formattedName);
+$("#header").append(formattedRole);
+$("#header").prepend(formattedName);
 
 // $("#main").append(work["position"]);
 // $("#main").append(education.name);
