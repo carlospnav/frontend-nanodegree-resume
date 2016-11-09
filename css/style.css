@@ -94,7 +94,7 @@ a {
 
 .welcome-message {
   font-style: italic;
-  font-size: 18px;
+  font-size: 16px;
   color: #f3f3f3;
   line-height: 28px;
 }
@@ -132,6 +132,10 @@ a {
   background-color: #484848;
 }
 
+#projects {
+  padding-bottom: 5%;
+}
+
 .flex-box {
   display: -webkit-flex;
   display: flex;
@@ -165,6 +169,10 @@ ul {
 
 img {
   padding: 10px;
+}
+
+.projpic {
+  display: none;
 }
 
 span {
@@ -215,7 +223,14 @@ span {
 
 @media only screen and (min-width: 750px) {
   #skills-h3,
-  .biopic {
+  .biopic,
+  .project-entry > img {
     display: block;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .project-entry > img {
+    display: inline;
   }
 }
